@@ -60,49 +60,49 @@
             }
         }        
 
-        const produto1 = new Product("Honor", 1000, "cel 8 polegadas", "./img/Honor.jpg", false, 4.5, ["8 polegadas", "honor 5.3","verde"], ["celular", "android"], 2)
-        const produto2 = new Product("Apple", 6000, "cel 12 polegadas", "./img/iphone.png", true, 5.0, ["12 polegadas", "apple 9.3", "plata"], ["celular", "apple", "tecnologia"], 5)
-        const produto3 = new Product("Xiaomi", 3500, "cel 10 polegadas", "./img/xiaomi.png", true, 4.0, ["10 polegadas", "xiaomi 8.7", "azul"], ["celular", "xiaomi", "tecnologia"], 10)
+        var produto1 = new Product("Honor", 1000, "cel 8 polegadas", "./img/Honor.jpg", false, 4.5, ["8 polegadas", "honor 5.3","verde"], ["celular", "android"], 2)
+        var produto2 = new Product("Apple", 6000, "cel 12 polegadas", "./img/iphone.png", true, 5.0, ["12 polegadas", "apple 9.3", "plata"], ["celular", "apple", "tecnologia"], 5)
+        var produto3 = new Product("Xiaomi", 3500, "cel 10 polegadas", "./img/xiaomi.png", true, 4.0, ["10 polegadas", "xiaomi 8.7", "azul"], ["celular", "xiaomi", "tecnologia"], 10)
 
-        const listCards = document.createElement('div')
+        var listCards = document.createElement('div')
             listCards.classList.add('listCards')
 
 
         function createHtmlCard(product) {
 
-            const card = document.createElement('div')
+            let card = document.createElement('div')
             card.classList.add('card')
 
-            const name = document.createElement('h1')
+            let name = document.createElement('h1')
             name.textContent = `${product.nome}`
 
-            const descricao = document.createElement('h2')
+            let descricao = document.createElement('h2')
             descricao.textContent = `${product.descricao}`
 
-            const disponivel = document.createElement('h2')
+            let disponivel = document.createElement('h2')
             if(product.disponivel === true) {
                 disponivel.textContent = `Disponível`
             } else {
-                disponivel.textContent = `Não Disponível`
+                disponivel.textContent = `Indisponível`
             }
 
-            const precoFinal = product.pegarPrecoFinal()
-            const preco = document.createElement('h2')
+            var precoFinal = product.pegarPrecoFinal()
+            var preco = document.createElement('h2')
             preco.innerHTML = `Preço: ${precoFinal}`    
             preco.classList.add('preco')
             
-            const desconto = document.createElement('h2')
+            var desconto = document.createElement('h2')
             desconto.textContent = `Desconto ${product.desconto}%`
             desconto.classList.add('desconto')
 
-            const imagem = document.createElement('img')
+            var imagem = document.createElement('img')
             imagem.setAttribute('src', product.imagem)
             imagem.classList.add('image')
 
-            const caracteristicas = document.createElement('h2')
+            var caracteristicas = document.createElement('h2')
             caracteristicas.textContent = `Características: ${product.caracteristicas.join(', ')}`
 
-            const tags = document.createElement('h2')
+            var tags = document.createElement('h2')
             tags.textContent = `Tags: ${product.tags.join(', ')}`
 
             card.appendChild(name)
@@ -111,7 +111,7 @@
             card.appendChild(imagem)
             card.appendChild(tags)
             card.appendChild(caracteristicas)
-            const precoDados = document.createElement('div')
+            var precoDados = document.createElement('div')
             precoDados.classList.add('precoDados')
             card.appendChild(precoDados)
             precoDados.appendChild(preco)
@@ -123,7 +123,7 @@
 
         document.body.appendChild(listCards)
         
-        const arrayCards = []
+        let arrayCards = []
 
         arrayCards.push(produto1, produto2, produto3)
 
